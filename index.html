@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>TVC Propuesta Jorge Rueda – Repositorio de Recursos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tipografía principal del sistema -->
+  <!-- Puede cambiarse por otra fuente corporativa si se requiere -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Framework base para grillas y componentes -->
+  <!-- No es necesario modificar esta línea -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Hoja de estilos personalizada -->
+  <!-- Aquí se definen colores, tipografías y estilos visuales -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="theme-dark">
+  <div class="d-flex flex-column flex-md-row min-vh-100 app-shell">
+
+    <!-- Barra lateral de navegación -->
+    <!-- Aquí puede cambiar el nombre del sistema o el logo -->
+    <aside class="sidebar-black d-flex flex-md-column p-3">
+      <div class="d-flex align-items-center mb-3 sidebar-brand">
+        <!-- Reemplazar este div por el logo oficial si se desea -->
+        <div class="logo-black me-2"></div>
+        <span class="fw-semibold text-strong">Propuesta TVC</span>
+      </div>
+
+      <!-- Menú principal -->
+      <ul class="nav flex-row flex-md-column w-100 gap-1 sidebar-nav">
+        <li><a class="nav-link-black active" href="#inicio">Inicio</a></li>
+        <li><a class="nav-link-black" href="#marcas">Marcas</a></li>
+        <li><a class="nav-link-black" href="#recursos">Recursos</a></li>
+        <li><a class="nav-link-black" href="#historial">Historial</a></li>
+        <li><a class="nav-link-black" href="#favoritos">Favoritos</a></li>
+      </ul>
+
+      <!-- Texto informativo interno -->
+      <div class="mt-auto small text-footer d-none d-md-block">
+        Repositorio interno · v1.0
+      </div>
+    </aside>
+
+    <!-- Área principal de contenido -->
+    <main class="flex-grow-1 main-black">
+
+      <!-- Encabezado superior -->
+      <!-- Puede editar el título y la descripción según el proyecto -->
+      <header
+        id="inicio"
+        class="topbar-black d-flex align-items-center justify-content-between px-4 py-3"
+      >
+        <div class="d-flex flex-column header-main-copy">
+          <span class="eyebrow">Dashboard</span>
+          <h1 class="h5 fw-semibold text-strong mb-1">Repositorio de Recursos de Marca</h1>
+          <p class="small text-soft mb-0">
+            Acceso rápido a logos, manuales, tipografías y archivos editables para el equipo de TVC.
+          </p>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 header-actions">
+
+          <!-- Botón para cambiar entre modo claro y oscuro -->
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Cambiar tema de color"
+          >
+            <span class="theme-toggle-thumb"></span>
+            <span class="theme-toggle-label theme-toggle-label-dark">Oscuro</span>
+            <span class="theme-toggle-label theme-toggle-label-light">Claro</span>
+          </button>
+
+          <!-- Navegación superior -->
+          <nav class="d-none d-sm-flex align-items-center gap-4 header-top-nav">
+            <a href="#inicio" class="link-top">Inicio</a>
+            <a href="#marcas" class="link-top">Marcas</a>
+            <a href="#recursos" class="link-top">Recursos</a>
+            <a href="#historial" class="link-top">Historial</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Contenido principal -->
+      <div class="container-fluid py-4 px-4 px-lg-5 content-area">
+
+        <!-- Buscador general -->
+        <!-- Filtra marcas y recursos por nombre/palabras clave/tags -->
+        <section class="mb-4">
+          <label class="form-label fw-medium text-strong">Buscar recursos</label>
+          <div class="input-group input-group-lg search-black shadow-sm">
+            <span class="input-group-text icon-wrapper">
+              <span class="dot dot-default"></span>
+            </span>
+            <input
+              id="globalSearch"
+              type="text"
+              class="form-control border-0 search-input-black"
+              placeholder="Buscar marca, archivo o palabra clave... (Ej: manual #pdf  |  tag:logo)"
+            />
+          </div>
+          <div class="small text-soft mt-2">
+            Puedes usar tags con <strong>#tag</strong> o <strong>tag:algo</strong>. Ej: <strong>manual 2024 #pdf</strong>
+          </div>
+        </section>
+
+        <!-- Filtros rápidos (v1: UI; v2: lógica) -->
+        <section class="mb-4">
+          <div class="d-flex flex-wrap gap-2">
+            <button class="filter-pill active" type="button">Todas las marcas</button>
+            <button class="filter-pill" type="button">Más usadas</button>
+            <button class="filter-pill" type="button">Nuevas</button>
+            <button class="filter-pill" type="button">Campañas</button>
+          </div>
+        </section>
+
+        <!-- Listado de marcas -->
+        <section id="marcas" class="mb-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="h6 fw-semibold text-strong mb-0">Marcas</h2>
+          </div>
+
+          <div class="row g-3" id="brandGrid">
+
+            <!-- Marcas base (pueden reemplazarse por marcas reales) -->
+            <div class="col-6 col-md-4 col-lg-3 brand-col" data-brand-col="Marca Alfa">
+              <article class="brand-card p-3 h-100 brand-card-select" data-brand="Marca Alfa">
+                <div class="brand-logo mb-3"></div>
+                <h3 class="h6 fw-semibold mb-1">Marca Alfa</h3>
+                <p class="small text-soft mb-3">Lorem ipsum dolor sit amet.</p>
+                <button class="btn btn-sm btn-black w-100" type="button">Ver recursos</button>
+              </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 brand-col" data-brand-col="Marca Beta">
+              <article class="brand-card p-3 h-100 brand-card-select" data-brand="Marca Beta">
+                <div class="brand-logo mb-3"></div>
+                <h3 class="h6 fw-semibold mb-1">Marca Beta</h3>
+                <p class="small text-soft mb-3">Consectetur adipiscing elit.</p>
+                <button class="btn btn-sm btn-black w-100" type="button">Ver recursos</button>
+              </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 brand-col" data-brand-col="Marca Gamma">
+              <article class="brand-card p-3 h-100 brand-card-select" data-brand="Marca Gamma">
+                <div class="brand-logo mb-3"></div>
+                <h3 class="h6 fw-semibold mb-1">Marca Gamma</h3>
+                <p class="small text-soft mb-3">Sed do eiusmod tempor.</p>
+                <button class="btn btn-sm btn-black w-100" type="button">Ver recursos</button>
+              </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 brand-col" data-brand-col="Marca Delta">
+              <article class="brand-card p-3 h-100 brand-card-select" data-brand="Marca Delta">
+                <div class="brand-logo mb-3"></div>
+                <h3 class="h6 fw-semibold mb-1">Marca Delta</h3>
+                <p class="small text-soft mb-3">Incididunt ut labore.</p>
+                <button class="btn btn-sm btn-black w-100" type="button">Ver recursos</button>
+              </article>
+            </div>
+
+            <!-- Card: Agregar nueva marca -->
+            <div class="col-6 col-md-4 col-lg-3" id="addBrandCol">
+              <article class="brand-card p-3 h-100 brand-card-add" id="addBrandCard" role="button" tabindex="0">
+                <div class="brand-logo mb-3 brand-logo-add">+</div>
+                <h3 class="h6 fw-semibold mb-1">Agregar marca</h3>
+                <p class="small text-soft mb-3">Crear una nueva marca y gestionar sus recursos.</p>
+                <button class="btn btn-sm btn-black w-100" type="button">Crear</button>
+              </article>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Tabla de recursos -->
+        <section id="recursos">
+          <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+            <h2 class="h6 fw-semibold text-strong mb-2 mb-sm-0">
+              Recursos de: <span class="text-accent" id="brandName">Marca Alfa</span>
+            </h2>
+
+            <!-- Acciones sobre recursos (v1: agregar recurso por UI) -->
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-outline-light btn-ghost" type="button" id="openAddResource">
+                Agregar recurso
+              </button>
+            </div>
+          </div>
+
+          <div class="input-group input-group-sm internal-search-black mb-3 mt-2">
+            <span class="input-group-text">
+              <span class="dot dot-default"></span>
+            </span>
+            <input
+              type="text"
+              class="form-control border-0 internal-input-black"
+              placeholder="Buscar dentro de la marca... (Ej: logo #png | tag:manual)"
+              id="brandSearch"
+            />
+          </div>
+
+          <div class="table-responsive table-wrapper-black">
+            <table class="table align-middle mb-0 table-black">
+              <thead>
+                <tr>
+                  <th>Recurso</th>
+                  <th>Tipo</th>
+                  <th>Descripción</th>
+                  <th class="text-end">Descargar</th>
+                </tr>
+              </thead>
+              <tbody id="resourcesBody"></tbody>
+            </table>
+          </div>
+
+          <div class="small text-soft mt-2">
+            Tip: Puedes usar tags como <strong>#logo</strong>, <strong>#pdf</strong> o <strong>tag:branding</strong>.
+          </div>
+        </section>
+
+        <!-- Historial de uso (v1: placeholder) -->
+        <section id="historial" class="mt-5 mb-5">
+          <h2 class="h6 fw-semibold text-strong mb-2">Historial</h2>
+          <p class="small text-soft">
+            Aquí podrían mostrarse descargas recientes o marcas consultadas con mayor frecuencia.
+          </p>
+        </section>
+
+        <!-- Favoritos (v1: placeholder) -->
+        <section id="favoritos" class="mt-5 mb-5">
+          <h2 class="h6 fw-semibold text-strong mb-2">Favoritos</h2>
+          <p class="small text-soft">
+            Este apartado puede usarse en v2 para guardar accesos frecuentes por usuario.
+          </p>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS (requerido para modals) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modal: Crear marca -->
+  <div class="modal fade" id="brandModal" tabindex="-1" aria-labelledby="brandModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-black">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-strong" id="brandModalLabel">Crear nueva marca</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label text-strong">Nombre de la marca *</label>
+            <input id="newBrandName" type="text" class="form-control input-black" placeholder="Ej: Telenoticias" />
+            <div class="small text-soft mt-1" id="brandNameError" style="display:none;">Este nombre ya existe o está vacío.</div>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label text-strong">Descripción</label>
+            <textarea id="newBrandDesc" class="form-control input-black" rows="3" placeholder="Breve descripción (opcional)"></textarea>
+          </div>
+
+          <div class="small text-soft">
+            Nota: La marca se guarda localmente en este navegador (localStorage).
+          </div>
+        </div>
+
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-sm btn-download-black" id="saveBrandBtn">Guardar marca</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Agregar recurso -->
+  <div class="modal fade" id="resourceModal" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-black">
+        <div class="modal-header border-0">
+          <div>
+            <h5 class="modal-title text-strong" id="resourceModalLabel">Agregar recurso</h5>
+            <div class="small text-soft">Marca seleccionada: <span class="text-accent" id="resourceModalBrand">—</span></div>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label class="form-label text-strong">Nombre del recurso *</label>
+              <input id="resName" type="text" class="form-control input-black" placeholder="Ej: Logo horizontal" />
+              <div class="small text-soft mt-1" id="resNameError" style="display:none;">El nombre es obligatorio.</div>
+            </div>
+
+            <div class="col-12 col-md-3">
+              <label class="form-label text-strong">Tipo *</label>
+              <select id="resType" class="form-select input-black">
+                <option value="PNG">PNG</option>
+                <option value="SVG">SVG</option>
+                <option value="PDF">PDF</option>
+                <option value="TTF">TTF</option>
+                <option value="AI">AI</option>
+                <option value="PSD">PSD</option>
+                <option value="MP4">MP4</option>
+                <option value="MOV">MOV</option>
+                <option value="ZIP">ZIP</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-3">
+              <label class="form-label text-strong">Categoría *</label>
+              <select id="resCategory" class="form-select input-black">
+                <option value="logo">logo</option>
+                <option value="svg">svg</option>
+                <option value="pdf">pdf</option>
+                <option value="font">font</option>
+                <option value="default">default</option>
+              </select>
+              <div class="small text-soft mt-1">Controla el color del indicador (dot).</div>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label text-strong">Descripción</label>
+              <textarea id="resDesc" class="form-control input-black" rows="3" placeholder="Breve explicación del recurso (opcional)"></textarea>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label text-strong">URL de descarga *</label>
+              <input id="resUrl" type="url" class="form-control input-black" placeholder="Ej: https://intranet/brand/logo.png" />
+              <div class="small text-soft mt-1" id="resUrlError" style="display:none;">La URL es obligatoria para descargar.</div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label text-strong">Tags / Keywords</label>
+              <input id="resTags" type="text" class="form-control input-black" placeholder="Ej: logo, branding, png  |  o: #logo #png" />
+              <div class="small text-soft mt-1">
+                Se guardan como lista: separa por coma o espacio. También puedes escribirlos con #.
+              </div>
+            </div>
+          </div>
+
+          <div class="small text-soft mt-3">
+            Nota: En v2 se recomienda integrar almacenamiento real (servidor/intranet) y control de accesos.
+          </div>
+        </div>
+
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-sm btn-download-black" id="saveResourceBtn">Guardar recurso</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lógica de funcionamiento del sistema -->
+  <!-- Gestiona selección de marcas, recursos, búsqueda, alta de marcas y alta de recursos -->
+  <script>
+    /* ============================= */
+    /* CONFIG / STORAGE */
+    /* ============================= */
+
+    // Claves para persistencia local (demo/prototipo)
+    const STORAGE_KEY_BRANDS = "tvc-custom-brands-v1";
+    const STORAGE_KEY_RESOURCES = "tvc-custom-resources-v1";
+
+    /* ============================= */
+    /* DATOS BASE (v1) */
+    /* ============================= */
+
+    // Datos base (puedes reemplazar por marcas reales)
+    const baseBrandData = {
+      "Marca Alfa": {
+        desc: "Lorem ipsum dolor sit amet.",
+        resources: [
+          { name: "Logo horizontal", type: "PNG", category: "logo", desc: "Logo principal para uso en encabezados.", tags: ["logo", "png", "branding"], url: "https://example.com/logo-horizontal.png" },
+          { name: "Logo vector", type: "SVG", category: "svg", desc: "Versión vectorial para impresión.", tags: ["logo", "svg", "impresión"], url: "https://example.com/logo-vector.svg" },
+          { name: "Manual de marca 2024", type: "PDF", category: "pdf", desc: "Guía completa de uso de la marca.", tags: ["manual", "pdf", "lineamientos"], url: "https://example.com/manual-marca-2024.pdf" },
+          { name: "Tipografía oficial", type: "TTF", category: "font", desc: "Familia tipográfica principal.", tags: ["tipografía", "fuente", "ttf"], url: "https://example.com/tipografia-oficial.ttf" }
+        ]
+      },
+      "Marca Beta": {
+        desc: "Consectetur adipiscing elit.",
+        resources: [
+          { name: "Logo isotipo", type: "PNG", category: "logo", desc: "Isotipo para redes sociales.", tags: ["logo", "rrss", "png"], url: "https://example.com/logo-isotipo.png" },
+          { name: "Logo vertical", type: "SVG", category: "svg", desc: "Versión vertical para piezas impresas.", tags: ["logo", "svg"], url: "https://example.com/logo-vertical.svg" },
+          { name: "Manual rápido", type: "PDF", category: "pdf", desc: "Resumen de lineamientos básicos.", tags: ["manual", "pdf"], url: "https://example.com/manual-rapido.pdf" }
+        ]
+      },
+      "Marca Gamma": {
+        desc: "Sed do eiusmod tempor.",
+        resources: [
+          { name: "Logo principal", type: "PNG", category: "logo", desc: "Archivo optimizado para web.", tags: ["logo", "web", "png"], url: "https://example.com/logo-principal.png" },
+          { name: "Tipografía secundaria", type: "TTF", category: "font", desc: "Fuente recomendada para titulares.", tags: ["tipografía", "titulares", "ttf"], url: "https://example.com/tipografia-secundaria.ttf" }
+        ]
+      },
+      "Marca Delta": {
+        desc: "Incididunt ut labore.",
+        resources: [
+          { name: "Logo monocromático", type: "PNG", category: "logo", desc: "Uso en fondos oscuros y claros.", tags: ["logo", "mono", "png"], url: "https://example.com/logo-mono.png" },
+          { name: "Pack iconográfico", type: "SVG", category: "svg", desc: "Íconos oficiales de la marca.", tags: ["iconos", "svg", "pack"], url: "https://example.com/pack-iconos.svg" },
+          { name: "Brand book", type: "PDF", category: "pdf", desc: "Documento completo de lineamientos.", tags: ["manual", "pdf", "branding"], url: "https://example.com/brand-book.pdf" }
+        ]
+      }
+    };
+
+    // Estado unificado: se clona base y luego se fusiona con marcas/recursos personalizados
+    const brandData = JSON.parse(JSON.stringify(baseBrandData));
+
+    // Marca seleccionada actualmente
+    let currentBrand = "Marca Alfa";
+
+    /* ============================= */
+    /* HELPERS */
+    /* ============================= */
+
+    function getDotClass(category) {
+      switch (category) {
+        case "logo": return "dot-logo";
+        case "svg": return "dot-svg";
+        case "pdf": return "dot-pdf";
+        case "font": return "dot-font";
+        default: return "dot-default";
+      }
+    }
+
+    // Normaliza texto para comparar sin sensibilidad a mayúsculas/espacios
+    function norm(str) {
+      return (str || "").toString().toLowerCase().trim();
+    }
+
+    // Extrae tags y texto libre de un input.
+    // Soporta: #tag  y  tag:algo
+    function parseQuery(raw) {
+      const text = raw || "";
+      const tagMatches = [
+        ...text.matchAll(/#([\p{L}\p{N}_-]+)/gu),
+        ...text.matchAll(/\btag:([\p{L}\p{N}_-]+)/gu)
+      ];
+
+      const tags = tagMatches.map(m => norm(m[1])).filter(Boolean);
+
+      // Remover tokens de tag del texto libre
+      const freeText = norm(
+        text
+          .replace(/#[\p{L}\p{N}_-]+/gu, " ")
+          .replace(/\btag:[\p{L}\p{N}_-]+/gu, " ")
+      ).replace(/\s+/g, " ").trim();
+
+      return { freeText, tags };
+    }
+
+    // Convierte un string de tags en arreglo normalizado
+    function parseTags(raw) {
+      const txt = (raw || "").trim();
+      if (!txt) return [];
+
+      // Capturar tags tipo #logo
+      const hashTags = [...txt.matchAll(/#([\p{L}\p{N}_-]+)/gu)].map(m => norm(m[1]));
+
+      // Split por coma o espacio
+      const parts = txt
+        .replace(/#[\p{L}\p{N}_-]+/gu, " ")
+        .split(/[, ]+/g)
+        .map(norm)
+        .filter(Boolean);
+
+      // Unificar sin duplicados
+      return [...new Set([...hashTags, ...parts])];
+    }
+
+    // Verifica si un recurso cumple con el filtro de búsqueda
+    function resourceMatches(resource, query) {
+      const { freeText, tags } = query;
+
+      // Texto libre: se busca en nombre, descripción, tipo, tags
+      if (freeText) {
+        const haystack = [
+          resource.name,
+          resource.desc,
+          resource.type,
+          ...(resource.tags || [])
+        ].map(norm).join(" ");
+
+        if (!haystack.includes(freeText)) return false;
+      }
+
+      // Tags: deben estar presentes (AND)
+      if (tags.length) {
+        const resourceTags = (resource.tags || []).map(norm);
+        const ok = tags.every(t => resourceTags.includes(t));
+        if (!ok) return false;
+      }
+
+      return true;
+    }
+
+    // Coincidencia para marca (nombre/desc + recursos) según búsqueda global
+    function brandMatches(brandName, query) {
+      const data = brandData[brandName];
+      const desc = data?.desc || "";
+      const resources = data?.resources || [];
+      const { freeText, tags } = query;
+
+      // Si no hay filtros, siempre coincide
+      if (!freeText && !tags.length) return true;
+
+      // Evaluar texto libre contra nombre/desc
+      if (freeText) {
+        const brandHay = [brandName, desc].map(norm).join(" ");
+        const brandOk = brandHay.includes(freeText);
+
+        // Si no coincide por marca, intentar por recursos
+        if (!brandOk) {
+          const anyRes = resources.some(r => resourceMatches(r, query));
+          if (!anyRes) return false;
+        }
+      }
+
+      // Evaluar tags: deben existir al menos en algún recurso (lógica OR por marca)
+      if (tags.length) {
+        const anyResTag = resources.some(r => resourceMatches(r, { freeText: "", tags }));
+        if (!anyResTag) return false;
+      }
+
+      return true;
+    }
+
+    /* ============================= */
+    /* STORAGE: CARGA / GUARDADO */
+    /* ============================= */
+
+    // Cargar marcas creadas por el usuario
+    function loadCustomBrands() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_BRANDS);
+        if (!raw) return;
+
+        const parsed = JSON.parse(raw);
+
+        // Estructura esperada: { "NombreMarca": { desc: "..." }, ... }
+        Object.keys(parsed).forEach((brandName) => {
+          if (!brandData[brandName]) {
+            brandData[brandName] = { desc: parsed[brandName].desc || "Marca creada por el usuario.", resources: [] };
+          } else {
+            // Si existiera (por coincidencia), no sobreescribir base
+          }
+        });
+      } catch (e) {
+        console.warn("No se pudieron cargar marcas personalizadas.", e);
+      }
+    }
+
+    // Cargar recursos creados por el usuario
+    function loadCustomResources() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_RESOURCES);
+        if (!raw) return;
+
+        const parsed = JSON.parse(raw);
+        // Estructura esperada: { "NombreMarca": [resources...], ... }
+
+        Object.keys(parsed).forEach((brandName) => {
+          if (!brandData[brandName]) {
+            // Si la marca no existe, crearla (por seguridad)
+            brandData[brandName] = { desc: "Marca creada por el usuario.", resources: [] };
+          }
+
+          const incoming = Array.isArray(parsed[brandName]) ? parsed[brandName] : [];
+          // Agregar al final sin duplicar por nombre+tipo
+          incoming.forEach((r) => {
+            const exists = (brandData[brandName].resources || []).some(x =>
+              norm(x.name) === norm(r.name) && norm(x.type) === norm(r.type)
+            );
+            if (!exists) brandData[brandName].resources.push(r);
+          });
+        });
+      } catch (e) {
+        console.warn("No se pudieron cargar recursos personalizados.", e);
+      }
+    }
+
+    // Guardar marcas personalizadas (solo las no-base)
+    function saveCustomBrands() {
+      const custom = {};
+      Object.keys(brandData).forEach((brandName) => {
+        if (!baseBrandData[brandName]) {
+          custom[brandName] = { desc: brandData[brandName]?.desc || "" };
+        }
+      });
+      localStorage.setItem(STORAGE_KEY_BRANDS, JSON.stringify(custom));
+    }
+
+    // Guardar recursos personalizados (solo los agregados vía UI, por marca)
+    // Nota: para simplificar, guardamos TODO lo que no sea base por comparación.
+    function saveCustomResources() {
+      const custom = {};
+
+      Object.keys(brandData).forEach((brandName) => {
+        const baseList = baseBrandData[brandName]?.resources || [];
+        const currentList = brandData[brandName]?.resources || [];
+
+        // Consideramos "custom" aquello que no existe en base (por name+type)
+        const extras = currentList.filter((r) => {
+          return !baseList.some((b) => norm(b.name) === norm(r.name) && norm(b.type) === norm(r.type));
+        });
+
+        if (extras.length) custom[brandName] = extras;
+      });
+
+      localStorage.setItem(STORAGE_KEY_RESOURCES, JSON.stringify(custom));
+    }
+
+    /* ============================= */
+    /* RENDER: TABLA DE RECURSOS */
+    /* ============================= */
+
+    const brandNameSpan = document.getElementById("brandName");
+    const resourcesBody = document.getElementById("resourcesBody");
+    const brandSearch = document.getElementById("brandSearch");
+    const globalSearch = document.getElementById("globalSearch");
+
+    function renderResources(brand) {
+      const data = brandData[brand];
+      const resources = (data && data.resources) ? data.resources : [];
+
+      brandNameSpan.textContent = brand;
+      resourcesBody.innerHTML = "";
+
+      // Query combinada: global + búsqueda interna de marca
+      const qGlobal = parseQuery(globalSearch.value);
+      const qBrand = parseQuery(brandSearch.value);
+
+      // Fusionar: texto libre se concatena, tags se combinan
+      const merged = {
+        freeText: [qGlobal.freeText, qBrand.freeText].filter(Boolean).join(" ").trim(),
+        tags: [...new Set([...(qGlobal.tags || []), ...(qBrand.tags || [])])]
+      };
+
+      const filtered = resources.filter(r => resourceMatches(r, merged));
+
+      // Estado vacío
+      if (!filtered.length) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td colspan="4" class="small text-soft py-4">
+            No se encontraron recursos con los criterios ingresados.
+            <div class="mt-1">Ejemplos: <strong>manual #pdf</strong> · <strong>#logo</strong> · <strong>tag:branding</strong></div>
+          </td>
+        `;
+        resourcesBody.appendChild(tr);
+        return;
+      }
+
+      filtered.forEach((res) => {
+        const tags = (res.tags || []).slice(0, 4);
+
+        const hasUrl = !!(res.url && res.url.trim());
+        const downloadCell = hasUrl
+          ? `<a class="btn btn-sm btn-download-black" href="${res.url}" target="_blank" rel="noopener">Descargar</a>`
+          : `<button class="btn btn-sm btn-download-black btn-disabled" type="button" disabled>Sin link</button>`;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>
+            <span class="dot ${getDotClass(res.category)}"></span>
+            ${res.name}
+            ${tags.length ? `<div class="mt-1">${tags.map(t => `<span class="badge badge-black me-1">${t}</span>`).join("")}</div>` : ""}
+          </td>
+          <td><span class="badge badge-black">${res.type}</span></td>
+          <td class="text-soft small">${res.desc || ""}</td>
+          <td class="text-end">
+            ${downloadCell}
+          </td>
+        `;
+        resourcesBody.appendChild(tr);
+      });
+    }
+
+    /* ============================= */
+    /* RENDER: TARJETAS DE MARCA */
+    /* ============================= */
+
+    const brandGrid = document.getElementById("brandGrid");
+
+    function setActiveCard(selectedCard) {
+      document.querySelectorAll(".brand-card-select").forEach(card => card.classList.remove("brand-card-active"));
+      selectedCard.classList.add("brand-card-active");
+    }
+
+    function wireBrandCard(cardEl) {
+      cardEl.addEventListener("click", () => {
+        const brand = cardEl.getAttribute("data-brand");
+        setActiveCard(cardEl);
+        currentBrand = brand;
+        brandSearch.value = "";
+        renderResources(currentBrand);
+        document.getElementById("recursos").scrollIntoView({ behavior: "smooth" });
+      });
+    }
+
+    function wireExistingBrandCards() {
+      const brandCards = document.querySelectorAll(".brand-card-select");
+      brandCards.forEach(wireBrandCard);
+
+      const first = document.querySelector("[data-brand='Marca Alfa']");
+      if (first) setActiveCard(first);
+    }
+
+    function createBrandCardDOM(brandName, brandDesc) {
+      const col = document.createElement("div");
+      col.className = "col-6 col-md-4 col-lg-3 brand-col";
+      col.setAttribute("data-brand-col", brandName);
+
+      col.innerHTML = `
+        <article class="brand-card p-3 h-100 brand-card-select" data-brand="${brandName}">
+          <div class="brand-logo mb-3"></div>
+          <h3 class="h6 fw-semibold mb-1">${brandName}</h3>
+          <p class="small text-soft mb-3">${brandDesc || ""}</p>
+          <button class="btn btn-sm btn-black w-100" type="button">Ver recursos</button>
+        </article>
+      `;
+
+      const card = col.querySelector(".brand-card-select");
+      wireBrandCard(card);
+      return col;
+    }
+
+    function renderCustomBrandCards() {
+      // Insertar tarjetas antes del botón “Agregar marca”
+      const addBrandCol = document.getElementById("addBrandCol");
+
+      Object.keys(brandData).forEach((brandName) => {
+        const existsInDOM = document.querySelector(`.brand-card-select[data-brand="${CSS.escape(brandName)}"]`);
+        if (existsInDOM) return;
+
+        const desc = brandData[brandName]?.desc || "";
+        const col = createBrandCardDOM(brandName, desc);
+        brandGrid.insertBefore(col, addBrandCol);
+      });
+    }
+
+    /* ============================= */
+    /* BÚSQUEDA GLOBAL */
+    /* ============================= */
+
+    function applyGlobalSearch() {
+      const q = parseQuery(globalSearch.value);
+
+      // Filtrar visibilidad de marcas
+      const brandCols = document.querySelectorAll(".brand-col");
+      brandCols.forEach((col) => {
+        const brandName = col.getAttribute("data-brand-col");
+        const ok = brandMatches(brandName, q);
+        col.style.display = ok ? "" : "none";
+      });
+
+      // Re-render recursos para aplicar también filtro global en la marca seleccionada
+      renderResources(currentBrand);
+    }
+
+    globalSearch.addEventListener("input", applyGlobalSearch);
+
+    // Buscar dentro de la marca en tiempo real (se combina con global)
+    brandSearch.addEventListener("input", () => renderResources(currentBrand));
+
+    /* ============================= */
+    /* MODAL: CREAR NUEVA MARCA */
+    /* ============================= */
+
+    const addBrandCard = document.getElementById("addBrandCard");
+    const saveBrandBtn = document.getElementById("saveBrandBtn");
+    const newBrandName = document.getElementById("newBrandName");
+    const newBrandDesc = document.getElementById("newBrandDesc");
+    const brandNameError = document.getElementById("brandNameError");
+
+    let brandModal = null;
+
+    function isValidBrandName(name) {
+      const n = norm(name);
+      if (!n) return false;
+
+      // Evitar colisiones por mayúsculas/minúsculas
+      const exists = Object.keys(brandData).some(b => norm(b) === n);
+      return !exists;
+    }
+
+    function openBrandModal() {
+      brandNameError.style.display = "none";
+      newBrandName.value = "";
+      newBrandDesc.value = "";
+      brandModal.show();
+      setTimeout(() => newBrandName.focus(), 150);
+    }
+
+    function addNewBrand() {
+      const name = (newBrandName.value || "").trim();
+      const desc = (newBrandDesc.value || "").trim();
+
+      if (!isValidBrandName(name)) {
+        brandNameError.style.display = "block";
+        return;
+      }
+
+      // Crear marca vacía
+      brandData[name] = {
+        desc: desc || "Marca creada por el usuario.",
+        resources: []
+      };
+
+      // Persistir marca
+      saveCustomBrands();
+
+      // Crear card e insertarla antes del botón “Agregar marca”
+      const addBrandCol = document.getElementById("addBrandCol");
+      const col = createBrandCardDOM(name, brandData[name].desc);
+      brandGrid.insertBefore(col, addBrandCol);
+
+      // Seleccionar automáticamente
+      const card = col.querySelector(".brand-card-select");
+      setActiveCard(card);
+      currentBrand = name;
+      brandSearch.value = "";
+      renderResources(currentBrand);
+
+      brandModal.hide();
+      document.getElementById("recursos").scrollIntoView({ behavior: "smooth" });
+    }
+
+    addBrandCard.addEventListener("click", openBrandModal);
+    addBrandCard.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") openBrandModal();
+    });
+    saveBrandBtn.addEventListener("click", addNewBrand);
+
+    /* ============================= */
+    /* MODAL: AGREGAR RECURSO */
+    /* ============================= */
+
+    const openAddResource = document.getElementById("openAddResource");
+    const saveResourceBtn = document.getElementById("saveResourceBtn");
+
+    const resourceModalBrand = document.getElementById("resourceModalBrand");
+
+    const resName = document.getElementById("resName");
+    const resType = document.getElementById("resType");
+    const resCategory = document.getElementById("resCategory");
+    const resDesc = document.getElementById("resDesc");
+    const resUrl = document.getElementById("resUrl");
+    const resTags = document.getElementById("resTags");
+
+    const resNameError = document.getElementById("resNameError");
+    const resUrlError = document.getElementById("resUrlError");
+
+    let resourceModal = null;
+
+    function openResourceModal() {
+      resourceModalBrand.textContent = currentBrand;
+
+      // Reset
+      resName.value = "";
+      resDesc.value = "";
+      resUrl.value = "";
+      resTags.value = "";
+      resType.value = "PNG";
+      resCategory.value = "logo";
+
+      resNameError.style.display = "none";
+      resUrlError.style.display = "none";
+
+      resourceModal.show();
+      setTimeout(() => resName.focus(), 150);
+    }
+
+    function addNewResource() {
+      const name = (resName.value || "").trim();
+      const type = (resType.value || "").trim();
+      const category = (resCategory.value || "").trim();
+      const desc = (resDesc.value || "").trim();
+      const url = (resUrl.value || "").trim();
+      const tags = parseTags(resTags.value);
+
+      // Validaciones mínimas
+      resNameError.style.display = "none";
+      resUrlError.style.display = "none";
+
+      let ok = true;
+      if (!name) { resNameError.style.display = "block"; ok = false; }
+      if (!url) { resUrlError.style.display = "block"; ok = false; }
+      if (!ok) return;
+
+      // Crear recurso
+      const newRes = { name, type, category, desc, tags, url };
+
+      // Asegurar estructura de marca
+      if (!brandData[currentBrand]) {
+        brandData[currentBrand] = { desc: "Marca creada por el usuario.", resources: [] };
+      }
+      if (!Array.isArray(brandData[currentBrand].resources)) {
+        brandData[currentBrand].resources = [];
+      }
+
+      // Evitar duplicados por name+type
+      const exists = brandData[currentBrand].resources.some(r =>
+        norm(r.name) === norm(name) && norm(r.type) === norm(type)
+      );
+      if (!exists) brandData[currentBrand].resources.push(newRes);
+
+      // Guardar recursos personalizados
+      saveCustomResources();
+
+      // Refrescar UI
+      renderResources(currentBrand);
+
+      resourceModal.hide();
+    }
+
+    openAddResource.addEventListener("click", openResourceModal);
+    saveResourceBtn.addEventListener("click", addNewResource);
+
+    /* ============================= */
+    /* TEMA (claro/oscuro) */
+    /* ============================= */
+
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+
+    function applyTheme(theme) {
+      body.classList.toggle("theme-light", theme === "light");
+      body.classList.toggle("theme-dark", theme !== "light");
+      localStorage.setItem("tvc-theme", theme);
+    }
+
+    applyTheme(localStorage.getItem("tvc-theme") || "dark");
+
+    themeToggle.addEventListener("click", () => {
+      applyTheme(body.classList.contains("theme-light") ? "dark" : "light");
+    });
+
+    /* ============================= */
+    /* INIT */
+    /* ============================= */
+
+    // Cargar datos personalizados y renderizar
+    loadCustomBrands();
+    loadCustomResources();
+    wireExistingBrandCards();
+    renderCustomBrandCards();
+
+    // Render inicial
+    currentBrand = "Marca Alfa";
+    renderResources(currentBrand);
+
+    // Inicializar modals
+    brandModal = new bootstrap.Modal(document.getElementById("brandModal"));
+    resourceModal = new bootstrap.Modal(document.getElementById("resourceModal"));
+  </script>
+</body>
+</html>
