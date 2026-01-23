@@ -5,37 +5,28 @@
   <title>TVC Propuesta Jorge Rueda – Repositorio de Recursos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Tipografía principal del sistema -->
-  <!-- Puede cambiarse por otra fuente corporativa si se requiere -->
+  <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Framework base para grillas y componentes -->
-  <!-- No es necesario modificar esta línea -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
-  <!-- Hoja de estilos personalizada -->
-  <!-- Aquí se definen colores, tipografías y estilos visuales -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="theme-dark">
   <div class="d-flex flex-column flex-md-row min-vh-100 app-shell">
 
-    <!-- Barra lateral de navegación -->
-    <!-- Aquí puede cambiar el nombre del sistema o el logo -->
+    <!-- SIDEBAR -->
     <aside class="sidebar-black d-flex flex-md-column p-3">
       <div class="d-flex align-items-center mb-3 sidebar-brand">
-        <!-- Reemplazar este div por el logo oficial si se desea -->
         <div class="logo-black me-2"></div>
         <span class="fw-semibold text-strong">Propuesta TVC</span>
       </div>
 
-      <!-- Menú principal -->
       <ul class="nav flex-row flex-md-column w-100 gap-1 sidebar-nav">
         <li><a class="nav-link-black active" href="#inicio">Inicio</a></li>
         <li><a class="nav-link-black" href="#marcas">Marcas</a></li>
@@ -44,21 +35,16 @@
         <li><a class="nav-link-black" href="#favoritos">Favoritos</a></li>
       </ul>
 
-      <!-- Texto informativo interno -->
       <div class="mt-auto small text-footer d-none d-md-block">
         Repositorio interno · v1.0
       </div>
     </aside>
 
-    <!-- Área principal de contenido -->
+    <!-- MAIN -->
     <main class="flex-grow-1 main-black">
 
-      <!-- Encabezado superior -->
-      <!-- Puede editar el título y la descripción según el proyecto -->
-      <header
-        id="inicio"
-        class="topbar-black d-flex align-items-center justify-content-between px-4 py-3"
-      >
+      <!-- TOPBAR -->
+      <header id="inicio" class="topbar-black d-flex align-items-center justify-content-between px-4 py-3">
         <div class="d-flex flex-column header-main-copy">
           <span class="eyebrow">Dashboard</span>
           <h1 class="h5 fw-semibold text-strong mb-1">Repositorio de Recursos de Marca</h1>
@@ -69,19 +55,13 @@
 
         <div class="d-flex align-items-center gap-3 header-actions">
 
-          <!-- Botón para cambiar entre modo claro y oscuro -->
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            type="button"
-            aria-label="Cambiar tema de color"
-          >
+          <!-- TOGGLE -->
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema de color">
             <span class="theme-toggle-thumb"></span>
             <span class="theme-toggle-label theme-toggle-label-dark">Oscuro</span>
             <span class="theme-toggle-label theme-toggle-label-light">Claro</span>
           </button>
 
-          <!-- Navegación superior -->
           <nav class="d-none d-sm-flex align-items-center gap-4 header-top-nav">
             <a href="#inicio" class="link-top">Inicio</a>
             <a href="#marcas" class="link-top">Marcas</a>
@@ -91,11 +71,10 @@
         </div>
       </header>
 
-      <!-- Contenido principal -->
+      <!-- CONTENT -->
       <div class="container-fluid py-4 px-4 px-lg-5 content-area">
 
-        <!-- Buscador general -->
-        <!-- Filtra marcas y recursos por nombre/palabras clave/tags -->
+        <!-- SEARCH GLOBAL -->
         <section class="mb-4">
           <label class="form-label fw-medium text-strong">Buscar recursos</label>
           <div class="input-group input-group-lg search-black shadow-sm">
@@ -114,7 +93,7 @@
           </div>
         </section>
 
-        <!-- Filtros rápidos (v1: UI; v2: lógica) -->
+        <!-- FILTER PILLS -->
         <section class="mb-4">
           <div class="d-flex flex-wrap gap-2">
             <button class="filter-pill active" type="button">Todas las marcas</button>
@@ -124,7 +103,7 @@
           </div>
         </section>
 
-        <!-- Listado de marcas -->
+        <!-- BRANDS -->
         <section id="marcas" class="mb-5">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="h6 fw-semibold text-strong mb-0">Marcas</h2>
@@ -132,7 +111,6 @@
 
           <div class="row g-3" id="brandGrid">
 
-            <!-- Marcas base (pueden reemplazarse por marcas reales) -->
             <div class="col-6 col-md-4 col-lg-3 brand-col" data-brand-col="Marca Alfa">
               <article class="brand-card p-3 h-100 brand-card-select" data-brand="Marca Alfa">
                 <div class="brand-logo mb-3"></div>
@@ -169,7 +147,7 @@
               </article>
             </div>
 
-            <!-- Card: Agregar nueva marca -->
+            <!-- ADD BRAND -->
             <div class="col-6 col-md-4 col-lg-3" id="addBrandCol">
               <article class="brand-card p-3 h-100 brand-card-add" id="addBrandCard" role="button" tabindex="0">
                 <div class="brand-logo mb-3 brand-logo-add">+</div>
@@ -182,16 +160,16 @@
           </div>
         </section>
 
-        <!-- Tabla de recursos -->
+        <!-- RESOURCES -->
         <section id="recursos">
           <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
             <h2 class="h6 fw-semibold text-strong mb-2 mb-sm-0">
               Recursos de: <span class="text-accent" id="brandName">Marca Alfa</span>
             </h2>
 
-            <!-- Acciones sobre recursos (v1: agregar recurso por UI) -->
+            <!-- Botón visible en ambos temas -->
             <div class="d-flex gap-2">
-              <button class="btn btn-sm btn-outline-light btn-ghost" type="button" id="openAddResource">
+              <button class="btn btn-sm btn-download-black" type="button" id="openAddResource">
                 Agregar recurso
               </button>
             </div>
@@ -228,7 +206,7 @@
           </div>
         </section>
 
-        <!-- Historial de uso (v1: placeholder) -->
+        <!-- HISTORY -->
         <section id="historial" class="mt-5 mb-5">
           <h2 class="h6 fw-semibold text-strong mb-2">Historial</h2>
           <p class="small text-soft">
@@ -236,7 +214,7 @@
           </p>
         </section>
 
-        <!-- Favoritos (v1: placeholder) -->
+        <!-- FAVS -->
         <section id="favoritos" class="mt-5 mb-5">
           <h2 class="h6 fw-semibold text-strong mb-2">Favoritos</h2>
           <p class="small text-soft">
@@ -248,10 +226,10 @@
     </main>
   </div>
 
-  <!-- Bootstrap JS (requerido para modals) -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Modal: Crear marca -->
+  <!-- MODAL: CREATE BRAND -->
   <div class="modal fade" id="brandModal" tabindex="-1" aria-labelledby="brandModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content modal-black">
@@ -285,7 +263,7 @@
     </div>
   </div>
 
-  <!-- Modal: Agregar recurso -->
+  <!-- MODAL: ADD RESOURCE -->
   <div class="modal fade" id="resourceModal" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content modal-black">
@@ -338,9 +316,11 @@
             </div>
 
             <div class="col-12 col-md-6">
-              <label class="form-label text-strong">URL de descarga *</label>
+              <label class="form-label text-strong">URL de descarga</label>
               <input id="resUrl" type="url" class="form-control input-black" placeholder="Ej: https://intranet/brand/logo.png" />
-              <div class="small text-soft mt-1" id="resUrlError" style="display:none;">La URL es obligatoria para descargar.</div>
+              <div class="small text-soft mt-1" id="resUrlError" style="display:none;">
+                Ingresa una URL o selecciona un archivo (demo).
+              </div>
             </div>
 
             <div class="col-12 col-md-6">
@@ -348,6 +328,15 @@
               <input id="resTags" type="text" class="form-control input-black" placeholder="Ej: logo, branding, png  |  o: #logo #png" />
               <div class="small text-soft mt-1">
                 Se guardan como lista: separa por coma o espacio. También puedes escribirlos con #.
+              </div>
+            </div>
+
+            <!-- DEMO FILE -->
+            <div class="col-12">
+              <label class="form-label text-strong">Subir archivo (demo, sin backend)</label>
+              <input id="resFile" type="file" class="form-control input-black" />
+              <div class="small text-soft mt-1">
+                Se guarda solo metadata en localStorage (nombre, tipo, tamaño). No se almacena el archivo real.
               </div>
             </div>
           </div>
@@ -365,22 +354,16 @@
     </div>
   </div>
 
-  <!-- Lógica de funcionamiento del sistema -->
-  <!-- Gestiona selección de marcas, recursos, búsqueda, alta de marcas y alta de recursos -->
   <script>
     /* ============================= */
     /* CONFIG / STORAGE */
     /* ============================= */
-
-    // Claves para persistencia local (demo/prototipo)
     const STORAGE_KEY_BRANDS = "tvc-custom-brands-v1";
     const STORAGE_KEY_RESOURCES = "tvc-custom-resources-v1";
 
     /* ============================= */
-    /* DATOS BASE (v1) */
+    /* BASE DATA */
     /* ============================= */
-
-    // Datos base (puedes reemplazar por marcas reales)
     const baseBrandData = {
       "Marca Alfa": {
         desc: "Lorem ipsum dolor sit amet.",
@@ -416,16 +399,12 @@
       }
     };
 
-    // Estado unificado: se clona base y luego se fusiona con marcas/recursos personalizados
     const brandData = JSON.parse(JSON.stringify(baseBrandData));
-
-    // Marca seleccionada actualmente
     let currentBrand = "Marca Alfa";
 
     /* ============================= */
     /* HELPERS */
     /* ============================= */
-
     function getDotClass(category) {
       switch (category) {
         case "logo": return "dot-logo";
@@ -436,23 +415,18 @@
       }
     }
 
-    // Normaliza texto para comparar sin sensibilidad a mayúsculas/espacios
     function norm(str) {
       return (str || "").toString().toLowerCase().trim();
     }
 
-    // Extrae tags y texto libre de un input.
-    // Soporta: #tag  y  tag:algo
     function parseQuery(raw) {
       const text = raw || "";
       const tagMatches = [
         ...text.matchAll(/#([\p{L}\p{N}_-]+)/gu),
         ...text.matchAll(/\btag:([\p{L}\p{N}_-]+)/gu)
       ];
-
       const tags = tagMatches.map(m => norm(m[1])).filter(Boolean);
 
-      // Remover tokens de tag del texto libre
       const freeText = norm(
         text
           .replace(/#[\p{L}\p{N}_-]+/gu, " ")
@@ -462,30 +436,21 @@
       return { freeText, tags };
     }
 
-    // Convierte un string de tags en arreglo normalizado
     function parseTags(raw) {
       const txt = (raw || "").trim();
       if (!txt) return [];
-
-      // Capturar tags tipo #logo
       const hashTags = [...txt.matchAll(/#([\p{L}\p{N}_-]+)/gu)].map(m => norm(m[1]));
-
-      // Split por coma o espacio
       const parts = txt
         .replace(/#[\p{L}\p{N}_-]+/gu, " ")
         .split(/[, ]+/g)
         .map(norm)
         .filter(Boolean);
-
-      // Unificar sin duplicados
       return [...new Set([...hashTags, ...parts])];
     }
 
-    // Verifica si un recurso cumple con el filtro de búsqueda
     function resourceMatches(resource, query) {
       const { freeText, tags } = query;
 
-      // Texto libre: se busca en nombre, descripción, tipo, tags
       if (freeText) {
         const haystack = [
           resource.name,
@@ -497,65 +462,101 @@
         if (!haystack.includes(freeText)) return false;
       }
 
-      // Tags: deben estar presentes (AND)
       if (tags.length) {
         const resourceTags = (resource.tags || []).map(norm);
         const ok = tags.every(t => resourceTags.includes(t));
         if (!ok) return false;
       }
-
       return true;
     }
 
-    // Coincidencia para marca (nombre/desc + recursos) según búsqueda global
     function brandMatches(brandName, query) {
       const data = brandData[brandName];
       const desc = data?.desc || "";
       const resources = data?.resources || [];
       const { freeText, tags } = query;
 
-      // Si no hay filtros, siempre coincide
       if (!freeText && !tags.length) return true;
 
-      // Evaluar texto libre contra nombre/desc
       if (freeText) {
         const brandHay = [brandName, desc].map(norm).join(" ");
         const brandOk = brandHay.includes(freeText);
-
-        // Si no coincide por marca, intentar por recursos
         if (!brandOk) {
           const anyRes = resources.some(r => resourceMatches(r, query));
           if (!anyRes) return false;
         }
       }
 
-      // Evaluar tags: deben existir al menos en algún recurso (lógica OR por marca)
       if (tags.length) {
         const anyResTag = resources.some(r => resourceMatches(r, { freeText: "", tags }));
         if (!anyResTag) return false;
       }
-
       return true;
     }
 
-    /* ============================= */
-    /* STORAGE: CARGA / GUARDADO */
-    /* ============================= */
+    /* ===== Demo “subida” sin backend ===== */
+    function buildLocalFileRef(file) {
+      return `localfile:${file.name}|${file.type || "unknown"}|${file.size || 0}|${file.lastModified || Date.now()}`;
+    }
+    function parseLocalFileRef(ref) {
+      if (!ref || !ref.startsWith("localfile:")) return null;
+      const raw = ref.replace("localfile:", "");
+      const [name, type, size, lastModified] = raw.split("|");
+      return { name, type, size: Number(size || 0), lastModified: Number(lastModified || Date.now()) };
+    }
+    function formatBytes(bytes) {
+      const b = Number(bytes || 0);
+      if (b < 1024) return `${b} B`;
+      const kb = b / 1024;
+      if (kb < 1024) return `${kb.toFixed(1)} KB`;
+      const mb = kb / 1024;
+      return `${mb.toFixed(1)} MB`;
+    }
 
-    // Cargar marcas creadas por el usuario
+    function guessTypeFromFile(file) {
+      const name = (file?.name || "").toLowerCase();
+      const mime = (file?.type || "").toLowerCase();
+
+      if (mime.includes("png")) return "PNG";
+      if (mime.includes("svg")) return "SVG";
+      if (mime.includes("pdf")) return "PDF";
+      if (mime.includes("zip")) return "ZIP";
+      if (mime.includes("mp4")) return "MP4";
+      if (mime.includes("quicktime") || mime.includes("mov")) return "MOV";
+      if (mime.includes("font") || mime.includes("ttf")) return "TTF";
+
+      if (name.endsWith(".png")) return "PNG";
+      if (name.endsWith(".svg")) return "SVG";
+      if (name.endsWith(".pdf")) return "PDF";
+      if (name.endsWith(".ttf")) return "TTF";
+      if (name.endsWith(".ai")) return "AI";
+      if (name.endsWith(".psd")) return "PSD";
+      if (name.endsWith(".mp4")) return "MP4";
+      if (name.endsWith(".mov")) return "MOV";
+      if (name.endsWith(".zip")) return "ZIP";
+      return "";
+    }
+
+    function guessCategoryFromType(type) {
+      const t = (type || "").toUpperCase();
+      if (t === "PNG") return "logo";
+      if (t === "SVG") return "svg";
+      if (t === "PDF") return "pdf";
+      if (t === "TTF") return "font";
+      return "default";
+    }
+
+    /* ============================= */
+    /* STORAGE */
+    /* ============================= */
     function loadCustomBrands() {
       try {
         const raw = localStorage.getItem(STORAGE_KEY_BRANDS);
         if (!raw) return;
-
         const parsed = JSON.parse(raw);
-
-        // Estructura esperada: { "NombreMarca": { desc: "..." }, ... }
         Object.keys(parsed).forEach((brandName) => {
           if (!brandData[brandName]) {
             brandData[brandName] = { desc: parsed[brandName].desc || "Marca creada por el usuario.", resources: [] };
-          } else {
-            // Si existiera (por coincidencia), no sobreescribir base
           }
         });
       } catch (e) {
@@ -563,23 +564,17 @@
       }
     }
 
-    // Cargar recursos creados por el usuario
     function loadCustomResources() {
       try {
         const raw = localStorage.getItem(STORAGE_KEY_RESOURCES);
         if (!raw) return;
-
         const parsed = JSON.parse(raw);
-        // Estructura esperada: { "NombreMarca": [resources...], ... }
 
         Object.keys(parsed).forEach((brandName) => {
           if (!brandData[brandName]) {
-            // Si la marca no existe, crearla (por seguridad)
             brandData[brandName] = { desc: "Marca creada por el usuario.", resources: [] };
           }
-
           const incoming = Array.isArray(parsed[brandName]) ? parsed[brandName] : [];
-          // Agregar al final sin duplicar por nombre+tipo
           incoming.forEach((r) => {
             const exists = (brandData[brandName].resources || []).some(x =>
               norm(x.name) === norm(r.name) && norm(x.type) === norm(r.type)
@@ -592,7 +587,6 @@
       }
     }
 
-    // Guardar marcas personalizadas (solo las no-base)
     function saveCustomBrands() {
       const custom = {};
       Object.keys(brandData).forEach((brandName) => {
@@ -603,30 +597,22 @@
       localStorage.setItem(STORAGE_KEY_BRANDS, JSON.stringify(custom));
     }
 
-    // Guardar recursos personalizados (solo los agregados vía UI, por marca)
-    // Nota: para simplificar, guardamos TODO lo que no sea base por comparación.
     function saveCustomResources() {
       const custom = {};
-
       Object.keys(brandData).forEach((brandName) => {
         const baseList = baseBrandData[brandName]?.resources || [];
         const currentList = brandData[brandName]?.resources || [];
-
-        // Consideramos "custom" aquello que no existe en base (por name+type)
         const extras = currentList.filter((r) => {
           return !baseList.some((b) => norm(b.name) === norm(r.name) && norm(b.type) === norm(r.type));
         });
-
         if (extras.length) custom[brandName] = extras;
       });
-
       localStorage.setItem(STORAGE_KEY_RESOURCES, JSON.stringify(custom));
     }
 
     /* ============================= */
-    /* RENDER: TABLA DE RECURSOS */
+    /* RENDER RESOURCES */
     /* ============================= */
-
     const brandNameSpan = document.getElementById("brandName");
     const resourcesBody = document.getElementById("resourcesBody");
     const brandSearch = document.getElementById("brandSearch");
@@ -639,11 +625,9 @@
       brandNameSpan.textContent = brand;
       resourcesBody.innerHTML = "";
 
-      // Query combinada: global + búsqueda interna de marca
       const qGlobal = parseQuery(globalSearch.value);
       const qBrand = parseQuery(brandSearch.value);
 
-      // Fusionar: texto libre se concatena, tags se combinan
       const merged = {
         freeText: [qGlobal.freeText, qBrand.freeText].filter(Boolean).join(" ").trim(),
         tags: [...new Set([...(qGlobal.tags || []), ...(qBrand.tags || [])])]
@@ -651,7 +635,6 @@
 
       const filtered = resources.filter(r => resourceMatches(r, merged));
 
-      // Estado vacío
       if (!filtered.length) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
@@ -667,32 +650,80 @@
       filtered.forEach((res) => {
         const tags = (res.tags || []).slice(0, 4);
 
-        const hasUrl = !!(res.url && res.url.trim());
-        const downloadCell = hasUrl
-          ? `<a class="btn btn-sm btn-download-black" href="${res.url}" target="_blank" rel="noopener">Descargar</a>`
-          : `<button class="btn btn-sm btn-download-black btn-disabled" type="button" disabled>Sin link</button>`;
+        const isLocalDemo = typeof res.url === "string" && res.url.startsWith("localfile:");
+        const localMeta = isLocalDemo ? parseLocalFileRef(res.url) : null;
+
+        let downloadCell = "";
+        if (isLocalDemo) {
+          downloadCell = `
+            <button class="btn btn-sm btn-download-black" type="button" data-demo-download="1">
+              Descargar
+            </button>
+          `;
+        } else {
+          const hasUrl = !!(res.url && res.url.trim());
+          downloadCell = hasUrl
+            ? `<a class="btn btn-sm btn-download-black" href="${res.url}" target="_blank" rel="noopener">Descargar</a>`
+            : `<button class="btn btn-sm btn-download-black btn-disabled" type="button" disabled>Sin link</button>`;
+        }
 
         const tr = document.createElement("tr");
         tr.innerHTML = `
           <td>
             <span class="dot ${getDotClass(res.category)}"></span>
             ${res.name}
+            ${isLocalDemo ? `<span class="badge badge-black ms-2">DEMO</span>` : ""}
             ${tags.length ? `<div class="mt-1">${tags.map(t => `<span class="badge badge-black me-1">${t}</span>`).join("")}</div>` : ""}
+            ${localMeta ? `<div class="mt-1 small text-soft">Archivo (demo): ${localMeta.name} · ${formatBytes(localMeta.size)}</div>` : ""}
           </td>
           <td><span class="badge badge-black">${res.type}</span></td>
           <td class="text-soft small">${res.desc || ""}</td>
-          <td class="text-end">
-            ${downloadCell}
-          </td>
+          <td class="text-end">${downloadCell}</td>
         `;
+
         resourcesBody.appendChild(tr);
+
+        if (isLocalDemo) {
+          const btn = tr.querySelector("[data-demo-download='1']");
+          if (btn) {
+            btn.addEventListener("click", () => {
+              const meta = parseLocalFileRef(res.url);
+              const content =
+`RECURSO (DEMO)
+Nombre recurso: ${res.name}
+Tipo declarado: ${res.type}
+Categoría: ${res.category}
+Descripción: ${res.desc || ""}
+Tags: ${(res.tags || []).join(", ")}
+
+ARCHIVO SELECCIONADO (METADATA)
+Nombre archivo: ${meta?.name || ""}
+MIME: ${meta?.type || ""}
+Tamaño: ${formatBytes(meta?.size || 0)}
+Last Modified: ${meta?.lastModified ? new Date(meta.lastModified).toISOString() : ""}
+
+Nota: Prototipo sin backend. El archivo real no se almacena; solo se guarda un identificador y metadata en localStorage.`;
+
+              const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+              const urlObj = URL.createObjectURL(blob);
+
+              const a = document.createElement("a");
+              a.href = urlObj;
+              a.download = `${norm(res.name).replace(/\s+/g, "-") || "recurso"}-demo.txt`;
+              document.body.appendChild(a);
+              a.click();
+              a.remove();
+
+              URL.revokeObjectURL(urlObj);
+            });
+          }
+        }
       });
     }
 
     /* ============================= */
-    /* RENDER: TARJETAS DE MARCA */
+    /* BRAND CARDS */
     /* ============================= */
-
     const brandGrid = document.getElementById("brandGrid");
 
     function setActiveCard(selectedCard) {
@@ -714,7 +745,6 @@
     function wireExistingBrandCards() {
       const brandCards = document.querySelectorAll(".brand-card-select");
       brandCards.forEach(wireBrandCard);
-
       const first = document.querySelector("[data-brand='Marca Alfa']");
       if (first) setActiveCard(first);
     }
@@ -739,9 +769,7 @@
     }
 
     function renderCustomBrandCards() {
-      // Insertar tarjetas antes del botón “Agregar marca”
       const addBrandCol = document.getElementById("addBrandCol");
-
       Object.keys(brandData).forEach((brandName) => {
         const existsInDOM = document.querySelector(`.brand-card-select[data-brand="${CSS.escape(brandName)}"]`);
         if (existsInDOM) return;
@@ -753,33 +781,25 @@
     }
 
     /* ============================= */
-    /* BÚSQUEDA GLOBAL */
+    /* GLOBAL SEARCH */
     /* ============================= */
-
     function applyGlobalSearch() {
       const q = parseQuery(globalSearch.value);
-
-      // Filtrar visibilidad de marcas
       const brandCols = document.querySelectorAll(".brand-col");
       brandCols.forEach((col) => {
         const brandName = col.getAttribute("data-brand-col");
         const ok = brandMatches(brandName, q);
         col.style.display = ok ? "" : "none";
       });
-
-      // Re-render recursos para aplicar también filtro global en la marca seleccionada
       renderResources(currentBrand);
     }
 
     globalSearch.addEventListener("input", applyGlobalSearch);
-
-    // Buscar dentro de la marca en tiempo real (se combina con global)
     brandSearch.addEventListener("input", () => renderResources(currentBrand));
 
     /* ============================= */
-    /* MODAL: CREAR NUEVA MARCA */
+    /* MODAL: CREATE BRAND */
     /* ============================= */
-
     const addBrandCard = document.getElementById("addBrandCard");
     const saveBrandBtn = document.getElementById("saveBrandBtn");
     const newBrandName = document.getElementById("newBrandName");
@@ -791,8 +811,6 @@
     function isValidBrandName(name) {
       const n = norm(name);
       if (!n) return false;
-
-      // Evitar colisiones por mayúsculas/minúsculas
       const exists = Object.keys(brandData).some(b => norm(b) === n);
       return !exists;
     }
@@ -814,21 +832,13 @@
         return;
       }
 
-      // Crear marca vacía
-      brandData[name] = {
-        desc: desc || "Marca creada por el usuario.",
-        resources: []
-      };
-
-      // Persistir marca
+      brandData[name] = { desc: desc || "Marca creada por el usuario.", resources: [] };
       saveCustomBrands();
 
-      // Crear card e insertarla antes del botón “Agregar marca”
       const addBrandCol = document.getElementById("addBrandCol");
       const col = createBrandCardDOM(name, brandData[name].desc);
       brandGrid.insertBefore(col, addBrandCol);
 
-      // Seleccionar automáticamente
       const card = col.querySelector(".brand-card-select");
       setActiveCard(card);
       currentBrand = name;
@@ -846,13 +856,10 @@
     saveBrandBtn.addEventListener("click", addNewBrand);
 
     /* ============================= */
-    /* MODAL: AGREGAR RECURSO */
+    /* MODAL: ADD RESOURCE */
     /* ============================= */
-
     const openAddResource = document.getElementById("openAddResource");
     const saveResourceBtn = document.getElementById("saveResourceBtn");
-
-    const resourceModalBrand = document.getElementById("resourceModalBrand");
 
     const resName = document.getElementById("resName");
     const resType = document.getElementById("resType");
@@ -860,6 +867,7 @@
     const resDesc = document.getElementById("resDesc");
     const resUrl = document.getElementById("resUrl");
     const resTags = document.getElementById("resTags");
+    const resFile = document.getElementById("resFile");
 
     const resNameError = document.getElementById("resNameError");
     const resUrlError = document.getElementById("resUrlError");
@@ -867,15 +875,15 @@
     let resourceModal = null;
 
     function openResourceModal() {
-      resourceModalBrand.textContent = currentBrand;
+      document.getElementById("resourceModalBrand").textContent = currentBrand;
 
-      // Reset
       resName.value = "";
       resDesc.value = "";
       resUrl.value = "";
       resTags.value = "";
       resType.value = "PNG";
       resCategory.value = "logo";
+      resFile.value = "";
 
       resNameError.style.display = "none";
       resUrlError.style.display = "none";
@@ -884,15 +892,39 @@
       setTimeout(() => resName.focus(), 150);
     }
 
+    resFile.addEventListener("change", () => {
+      const file = resFile.files && resFile.files[0] ? resFile.files[0] : null;
+      if (!file) return;
+
+      const guessedType = guessTypeFromFile(file);
+      if (guessedType) {
+        resType.value = guessedType;
+        resCategory.value = guessCategoryFromType(guessedType);
+      }
+
+      if (!resName.value.trim()) {
+        const fileName = (file.name || "Recurso").replace(/\.[^/.]+$/, "");
+        resName.value = fileName;
+      }
+    });
+
     function addNewResource() {
       const name = (resName.value || "").trim();
-      const type = (resType.value || "").trim();
-      const category = (resCategory.value || "").trim();
+      let type = (resType.value || "").trim();
+      let category = (resCategory.value || "").trim();
       const desc = (resDesc.value || "").trim();
-      const url = (resUrl.value || "").trim();
+      let url = (resUrl.value || "").trim();
       const tags = parseTags(resTags.value);
 
-      // Validaciones mínimas
+      const file = resFile.files && resFile.files[0] ? resFile.files[0] : null;
+
+      if (file) {
+        const guessedType = guessTypeFromFile(file);
+        if (guessedType) type = guessedType;
+        category = guessCategoryFromType(type);
+        url = buildLocalFileRef(file);
+      }
+
       resNameError.style.display = "none";
       resUrlError.style.display = "none";
 
@@ -901,10 +933,8 @@
       if (!url) { resUrlError.style.display = "block"; ok = false; }
       if (!ok) return;
 
-      // Crear recurso
       const newRes = { name, type, category, desc, tags, url };
 
-      // Asegurar estructura de marca
       if (!brandData[currentBrand]) {
         brandData[currentBrand] = { desc: "Marca creada por el usuario.", resources: [] };
       }
@@ -912,18 +942,13 @@
         brandData[currentBrand].resources = [];
       }
 
-      // Evitar duplicados por name+type
       const exists = brandData[currentBrand].resources.some(r =>
         norm(r.name) === norm(name) && norm(r.type) === norm(type)
       );
       if (!exists) brandData[currentBrand].resources.push(newRes);
 
-      // Guardar recursos personalizados
       saveCustomResources();
-
-      // Refrescar UI
       renderResources(currentBrand);
-
       resourceModal.hide();
     }
 
@@ -931,9 +956,8 @@
     saveResourceBtn.addEventListener("click", addNewResource);
 
     /* ============================= */
-    /* TEMA (claro/oscuro) */
+    /* THEME */
     /* ============================= */
-
     const body = document.body;
     const themeToggle = document.getElementById("themeToggle");
 
@@ -952,18 +976,14 @@
     /* ============================= */
     /* INIT */
     /* ============================= */
-
-    // Cargar datos personalizados y renderizar
     loadCustomBrands();
     loadCustomResources();
     wireExistingBrandCards();
     renderCustomBrandCards();
 
-    // Render inicial
     currentBrand = "Marca Alfa";
     renderResources(currentBrand);
 
-    // Inicializar modals
     brandModal = new bootstrap.Modal(document.getElementById("brandModal"));
     resourceModal = new bootstrap.Modal(document.getElementById("resourceModal"));
   </script>
