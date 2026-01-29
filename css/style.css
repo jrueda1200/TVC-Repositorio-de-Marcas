@@ -191,6 +191,32 @@ body.theme-light .theme-toggle {
   background: linear-gradient(90deg, #ecfdf5, #d1fae5);
 }
 
+/* ============================= */
+/* ✅ FIX: label "Claro" NO desaparece en light */
+/* (evita overrides de color y asegura contraste) */
+/* ============================= */
+body.theme-dark .theme-toggle-label-dark{
+  color: #111827 !important;
+  font-weight: 600;
+}
+body.theme-dark .theme-toggle-label-light{
+  color: rgba(248, 250, 252, 0.7) !important;
+}
+
+body.theme-light .theme-toggle-label-light{
+  color: #111827 !important;
+  font-weight: 600;
+}
+body.theme-light .theme-toggle-label-dark{
+  color: rgba(15, 23, 42, 0.55) !important;
+}
+
+/* Opcional: thumb más visible en light */
+body.theme-light .theme-toggle-thumb{
+  background: #86efac;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+}
+
 /* CONTENIDO */
 .content-area { max-width: 1200px; }
 
@@ -282,7 +308,6 @@ body.theme-light .table-black{
   border-bottom: 1px solid var(--surface-alt);
 }
 
-/* Hover más controlado */
 .table-black tbody tr:hover td{
   background-color: rgba(255, 255, 255, 0.04) !important;
 }
